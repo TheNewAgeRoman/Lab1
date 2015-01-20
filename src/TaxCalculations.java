@@ -21,29 +21,29 @@ public class TaxCalculations
 		{
 			if(income<87850)
 			{
-				taxedIncome = 4991.25 + ((income - 36250) * .25);
-				System.out.println(PRINTED_INCOME + taxedIncome);
+				taxedIncome = 4991.25 + ((income - (income % 50) + 25 - 36250) * .25);
+				System.out.println(PRINTED_INCOME + Math.round(taxedIncome));	
 			}
 			else
 			{
-				taxedIncome = 17891.25 + ((income - 87850) * .28);
-				System.out.println(PRINTED_INCOME + taxedIncome);
+				taxedIncome = 17891.25 + ((income - (income % 50) + 25 - 87850) * .28);
+				System.out.println(PRINTED_INCOME + Math.round(taxedIncome));
 			}
 		}
 		if(filingType.equalsIgnoreCase("filing jointly"))
 		{
-			taxedIncome = 9982.50 + ((income - 72500) * .25);
-			System.out.println(PRINTED_INCOME + taxedIncome);
+			taxedIncome = 9982.50 + ((income - (income % 50) + 25 - 72500) * .25);
+			System.out.println(PRINTED_INCOME + Math.round(taxedIncome));
 		}
 		if(filingType.equalsIgnoreCase("filing separately"))
 		{
-			taxedIncome = 14228.75 + ((income - 73200) * .28);
-			System.out.println(PRINTED_INCOME + taxedIncome);
+			taxedIncome = 14228.75 + ((income - (income % 50) + 25 - 73200) * .28);
+			System.out.println(PRINTED_INCOME + Math.round(taxedIncome));
 		}
 		if(filingType.equalsIgnoreCase("head of household"))
 		{
-			taxedIncome = 6652 + ((income - 48600) * .25);
-			System.out.println(PRINTED_INCOME + taxedIncome);
+			taxedIncome = 6652 + ((income - (income % 50) + 25 - 48600) * .25);
+			System.out.println(PRINTED_INCOME + Math.round(taxedIncome));
 		}
 	}
 }
